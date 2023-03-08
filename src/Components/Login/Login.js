@@ -12,13 +12,21 @@ const Login = () => {
   const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
-    const RegisterUser = JSON.parse(localStorage.getItem("user"));
+    const RegisterUser = JSON.parse(localStorage.getItem("users"));
       const result = RegisterUser.find((user)=>{
           return user.email===input.email && user.pwd=== input.pwd;
       })
       console.log("login details checked",result)
 
-      result ? navigate('/dashboard') : alert("Wrong email or pwd");
+      // result ? navigate('/dashboard') : alert("Wrong email or pwd");
+      if(result)
+      {
+        localStorage.setItem("LoginUser",JSON.stringify(input))
+        navigate('/dashboard')
+      }
+      else{
+        alert("Wrong email or password")
+      }
       
   }
 

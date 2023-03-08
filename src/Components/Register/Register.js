@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(input)
-    localStorage.setItem("users", localStorage.getItem("user") ? JSON.stringify([...JSON.parse(localStorage.getItem("user")),input]) : JSON.stringify([input]) )
+    localStorage.setItem("users", localStorage.getItem("users") ? JSON.stringify([...JSON.parse(localStorage.getItem("users")), input]) : JSON.stringify([input]))
     navigate('/login')
   }
   const handleLoginClick = (e) => {
@@ -52,7 +52,7 @@ const Register = () => {
                   <td><input className='input' type='email'
                     name='email'
                     value={input.email}
-                    onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })} required/></td>
+                    onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })} required /></td>
                 </tr>
                 <tr>
                   <td className='lable'><label>Date of Birth  </label></td>
@@ -66,7 +66,7 @@ const Register = () => {
                   <td><input className='input' type='password'
                     name='pwd'
                     value={input.pwd}
-                    onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })} required/></td>
+                    onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })} required /></td>
                 </tr>
               </tbody>
             </table>

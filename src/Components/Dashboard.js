@@ -4,12 +4,13 @@ import { useNavigate } from 'react-router-dom'
 const Dashboard = () => {
   const navigate = useNavigate()
   const handleLogout = ()=>{
-    localStorage.removeItem("loggedin")
+    localStorage.removeItem("LoginUser")
+    console.log("Logout Successful  ")
     navigate("/login")
   }
   return (
     <div>
-      Dashboard
+      <h1>User Dashboard</h1>
       <button onClick={handleLogout}>Logout</button>
     </div>
   )
